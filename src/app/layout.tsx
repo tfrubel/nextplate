@@ -6,6 +6,7 @@ import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
+import TransitionProvider from "@/providers/TransitionProvider";
 import "@/styles/main.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 
@@ -56,22 +57,25 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href={`https://fonts.googleapis.com/css2?family=${pf}${sf ? "&family=" + sf : ""
-            }&display=swap`}
+          href={`https://fonts.googleapis.com/css2?family=${pf}${
+            sf ? "&family=" + sf : ""
+          }&display=swap`}
           rel="stylesheet"
         />
       </head>
 
       {/* body */}
       <body suppressHydrationWarning={true}>
-        <TwSizeIndicator />
-        <Providers>
-          <Announcement />
-          <Header />
-          <SearchModal />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
+        <TransitionProvider>
+          <TwSizeIndicator />
+          <Providers>
+            <Announcement />
+            <Header />
+            <SearchModal />
+            <main>{children}</main>
+            <Footer />
+          </Providers>
+        </TransitionProvider>
       </body>
     </html>
   );

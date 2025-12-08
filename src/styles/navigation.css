@@ -1,5 +1,5 @@
 .header {
-  @apply bg-body dark:bg-darkmode-body py-6;
+  @apply bg-transparent dark:bg-darkmode-body py-6;
 }
 
 /* navbar items */
@@ -31,7 +31,7 @@
 }
 
 .nav-dropdown-list {
-  @apply bg-body dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
+  @apply bg-transparent dark:bg-darkmode-body z-10 min-w-[180px] rounded p-4 shadow-sm;
 }
 
 .nav-dropdown-item {
