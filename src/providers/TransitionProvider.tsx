@@ -1,7 +1,12 @@
 "use client";
 import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { TransitionRouter } from "next-transition-router";
 import { FC, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(GSDevTools);
 
 const TransitionProvider: FC<any> = ({ children }) => {
   const targetElemRef = useRef<HTMLDivElement>(null);
@@ -11,7 +16,7 @@ const TransitionProvider: FC<any> = ({ children }) => {
         const pageLeaveAnimation = gsap.to(targetElemRef.current, {
           opacity: 0,
           y: 5,
-          duration: 0.4,
+          duration: 0.3,
           onComplete: next,
         });
         return () => pageLeaveAnimation.kill();
@@ -21,8 +26,8 @@ const TransitionProvider: FC<any> = ({ children }) => {
         const pageEnterAnimation = gsap.to(targetElemRef.current, {
           opacity: 1,
           y: 0,
-          delay: 0.1,
-          duration: 0.4,
+          delay: 0.05,
+          duration: 0.3,
           onComplete: next,
         });
         return () => pageEnterAnimation.kill();

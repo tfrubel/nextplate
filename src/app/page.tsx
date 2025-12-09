@@ -1,3 +1,4 @@
+import GsapTitleReveal from "@/components/GsapTitleReveal";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -32,6 +33,7 @@ const Home = () => {
                 className="mb-4 text-h3 lg:text-h1"
                 dangerouslySetInnerHTML={markdownify(banner.title)}
               />
+
               <p
                 className="mb-8"
                 dangerouslySetInnerHTML={markdownify(banner.content ?? "")}
@@ -89,10 +91,11 @@ const Home = () => {
                   index % 2 !== 0 && "md:order-1"
                 }`}
               >
-                <h2
+                {/* <h2
                   className="mb-4"
                   dangerouslySetInnerHTML={markdownify(feature.title)}
-                />
+                /> */}
+                <GsapTitleReveal texts={feature.title} as="h2" />
                 <p
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
