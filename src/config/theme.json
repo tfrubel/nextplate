@@ -3,6 +3,7 @@
     "default": {
       "theme_color": {
         "primary": "#121212",
+        "accent": "#ff6b6b",
         "body": "#fff",
         "border": "#eaeaea",
         "light": "#f6f6f6",

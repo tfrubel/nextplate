@@ -1,9 +1,9 @@
 .btn {
-  @apply inline-block rounded border border-transparent px-5 py-2 font-semibold capitalize transition;
+  @apply inline-block rounded-full border border-transparent px-5 py-2 font-semibold capitalize transition;
 }
 
 .btn-sm {
-  @apply rounded-sm px-4 py-1.5 text-sm;
+  @apply rounded-full px-4 py-1.5 text-sm;
 }
 
 .btn-primary {
@@ -12,4 +12,58 @@
 
 .btn-outline-primary {
   @apply border-dark text-text-dark hover:bg-dark dark:hover:text-text-dark bg-transparent hover:text-white dark:border-darkmode-primary dark:text-white dark:hover:bg-darkmode-primary;
+}
+
+.button--stroke:after {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button--stroke:after {
+  border: 0.125rem solid var(--color-surface-white);
+  border-radius: 6.25rem;
+  content: "";
+  pointer-events: none;
+}
+
+.button__label {
+  position: relative;
+  text-align: center;
+  transition: color 50ms var(--ease-in-out-quart);
+}
+
+.button--stroke:hover .button__label {
+  transition: color 0.15s var(--ease-in-out-quart);
+}
+
+.button__flair {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button--stroke .button__flair {
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.button__flair:before {
+  aspect-ratio: 1/1;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 170%;
 }

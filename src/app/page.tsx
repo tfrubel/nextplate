@@ -1,3 +1,5 @@
+import GsapButton from "@/components/GsapButton";
+import GsapFadeUp from "@/components/GsapFadeUp";
 import GsapTitleReveal from "@/components/GsapTitleReveal";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
@@ -96,26 +98,29 @@ const Home = () => {
                   dangerouslySetInnerHTML={markdownify(feature.title)}
                 /> */}
                 <GsapTitleReveal texts={feature.title} as="h2" />
-                <p
-                  className="mb-8 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.content)}
-                />
-                <ul>
-                  {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))}
-                </ul>
-                {feature.button.enable && (
+                <GsapFadeUp>
+                  <p
+                    className="mb-8 text-lg"
+                    dangerouslySetInnerHTML={markdownify(feature.content)}
+                  />
+                  <ul>
+                    {feature.bulletpoints.map((bullet: string) => (
+                      <li className="relative mb-4 pl-6" key={bullet}>
+                        <FaCheck className={"absolute left-0 top-1.5"} />
+                        <span dangerouslySetInnerHTML={markdownify(bullet)} />
+                      </li>
+                    ))}
+                  </ul>
+                </GsapFadeUp>
+                <GsapButton button={feature.button} />
+                {/* {feature.button.enable && (
                   <Link
                     className="btn btn-primary mt-5"
                     href={feature.button.link}
                   >
                     {feature.button.label}
                   </Link>
-                )}
+                )} */}
               </div>
             </div>
           </div>
