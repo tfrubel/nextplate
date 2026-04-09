@@ -64,7 +64,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         suppressHydrationWarning={true}
         className="min-h-screen flex flex-col"
       >
-        <TwSizeIndicator />
         <Providers>
           <Announcement />
           <Header />
@@ -72,6 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="grow">{children}</main>
           <Footer />
         </Providers>
+        <TwSizeIndicator />
       </body>
     </html>
   );
