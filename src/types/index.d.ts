@@ -73,3 +73,23 @@ export type Button = {
   label: string;
   link: string;
 };
+
+export type Comment = {
+  id: string;
+  postSlug: string;
+  parentId: string | null;
+  content: string;
+  authorUid: string;
+  authorName: string;
+  authorPhoto: string | null;
+  authorProvider: "google" | "github";
+  createdAt: number;
+  updatedAt: number;
+  edited: boolean;
+  deleted: boolean;
+};
+
+export type CommentNode = Comment & {
+  depth: number;
+  children: CommentNode[];
+};

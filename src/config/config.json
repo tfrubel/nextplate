@@ -45,10 +45,11 @@
     "gtm_id": "GTM-XXXXXX"
   },
 
-  "disqus": {
+  "comments": {
     "enable": true,
-    "shortname": "themefisher-template",
-    "settings": {}
+    "providers": ["google"],
+    "max_depth": 3,
+    "max_length": 5000
   },
 
   "metadata": {
